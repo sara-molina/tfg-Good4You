@@ -48,13 +48,19 @@
     }
 
     if(isset($_POST['login'])) {
+        echo "<div class=\"profile-div\">" ;
         $registro->login();
+        echo "</div>";
     }
 
     if(isset($_POST['guarda'])) {
         echo "<div id= \"div-saved-data\" class=\"profile-div\">" ;
-        $registro->saveUserData();
+        $registro->saveOrUpdateUserData();
         echo "</div>";
+    }
+    if(isset($_POST['profile'])) {
+        $registro->muestraDatos();
+        echo $_SESSION['modifyData'];
     }
 
     ?>
@@ -128,6 +134,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> 
     <script src="resources/js/script.js"></script>
     <script src="vendors/js/jquery.waypoints.min.js"></script>
+    <script src="../controller/validate.js"></script>
     
     
 </body>

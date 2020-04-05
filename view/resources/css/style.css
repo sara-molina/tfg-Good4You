@@ -501,6 +501,7 @@ input[type=checkbox]{
     border: 1px solid #A3CB38;
     padding: 60px;
     width: 60%;
+    height: auto;
     margin: 0 auto;
 }
 
@@ -522,6 +523,15 @@ input[type=checkbox]{
 .profile-div label{
     text-align: right;
 }
+
+.data-form{
+    border: 1px solid #A3CB38;
+    padding: 30px;
+    width: 51%;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+
 
 #div-saved-data{
     height: 45vh;
