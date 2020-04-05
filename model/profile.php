@@ -138,6 +138,25 @@ if($GLOBALS['conn']){
         $_SESSION['letter'] = $_POST['letter'];
         $_SESSION['otherdata'] = $_POST['otherdata'];
         $_SESSION['phone'] = $_POST['phone'];
+
+        $q="INSERT INTO user_detail (user_id,name,last_name,street,number,flat,letter,other_address_data,phone) 
+        VALUES ('".$_SESSION['user']."','".$_SESSION['name']."','".$_SESSION['lastname']."','".$_SESSION['street']."','".$_SESSION['number']."'
+        ,'".$_SESSION['flat']."','".$_SESSION['letter']."','".$_SESSION['otherdata']."','".$_SESSION['phone']."')";
+        $request = mysqli_query($GLOBALS['conn'],$q);  
+        echo "<p> <span>" . "Gracias " . $_SESSION['name'] . ", " ."
+                hemos guardado tus datos. <br>
+                Inicia sesión para ver acceder a tu cuenta.</span><p>
+                <a class=\"btn btn-full\" href=\"../view/login.html\">Accede</a>";
+    }
+    public function updateUserData(){
+        $_SESSION['name'] = $_POST['name'];
+        $_SESSION['lastname'] = $_POST['lastname'];
+        $_SESSION['street'] = $_POST['street'];
+        $_SESSION['number'] = $_POST['number'];
+        $_SESSION['flat'] = $_POST['flat'];
+        $_SESSION['letter'] = $_POST['letter'];
+        $_SESSION['otherdata'] = $_POST['otherdata'];
+        $_SESSION['phone'] = $_POST['phone'];
         
         $q="SELECT COUNT(*) as count FROM user_detail WHERE user_id = '".$_SESSION['user']."'";
         $request = mysqli_query($GLOBALS['conn'],$q); 
@@ -169,7 +188,6 @@ if($GLOBALS['conn']){
         }
        
     }
-   
     public function login(){
         echo "entrado en login"; 
        /* $q="SELECT COUNT(*) as contar FROM usuarios WHERE usuario =  '".$_SESSION['user']."' AND clave = '".$_SESSION['pass']."'";

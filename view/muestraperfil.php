@@ -52,8 +52,9 @@
     }
 
     if(isset($_POST['guarda'])) {
+        echo "<div id= \"div-saved-data\" class=\"profile-div\">" ;
         $registro->saveUserData();
-        $registro->muestraDatos(); 
+        echo "</div>";
     }
 
     ?>

@@ -523,6 +523,14 @@ input[type=checkbox]{
     text-align: right;
 }
 
+#div-saved-data{
+    height: 45vh;
+}
+
+#div-saved-data a{
+    margin-top: 20px;
+}
+
 /*------------------------------------------------*/
 /* FOOTER */
 /*------------------------------------------------*/
