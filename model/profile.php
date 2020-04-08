@@ -6,10 +6,11 @@ session_start();
 $_SESSION['user']= $_POST['user'];
 $_SESSION['pass'] =  $_POST['pass'];
 $_SESSION['modifyData'] = "
-<p>Añade tus datos: </p>
+
 <div class =\"row\">
 <div class=\"login-form\">
-    <form id =\"forumarioDatos\" action=\"../view/muestraperfil.php\"  onsubmit = \"return validateData()\" method=\"POST\">
+    <p>Añade o modifica tus datos: </p> <br>
+    <form id =\"forumarioDatos\" action=\"../view/showProfile.php\"  onsubmit = \"return validateData()\" method=\"POST\">
     <input name = \"user\" type=\"hidden\" value='".$_SESSION['user']."'>
     <input name = \"pass\" type=\"hidden\" value='".$_SESSION['pass']."'>
         <div class=\"form-group\">
@@ -157,11 +158,11 @@ if($GLOBALS['conn']){
                 $registro = new Registro();
                 $registro->muestraDatos(); 
                 echo $_SESSION['modifyData'];
+
+                
             }
             if ($array['contar'] == 0 ) {
-                $vista = '<p>No estás registrado o tus datos son incorrectos</p>';
-
-                echo $vista;
+                echo '<p>No estás registrado o tus datos son incorrectos</p>'; 
             }
     }  
     public function registrar(){
@@ -202,7 +203,7 @@ if($GLOBALS['conn']){
         }
         echo "<p> <span>" . "Gracias " . $_SESSION['name'] . ", " ."
         hemos guardado tus datos. <br></span><p>
-        <form action=\"../view/muestraperfil.php\" method=\"POST\">
+        <form action=\"../view/showProfile.php\" method=\"POST\">
             <input name = \"user\" type=\"hidden\" value='".$_SESSION['user']."'>
             <input name = \"pass\" type=\"hidden\" value='".$_SESSION['pass']."'>
             <input id =\"profile\" name = \"profile\" type=\"submit\" class=\"btn btn-primary\" value=\"Volver a mi perfil\"></input>
@@ -234,8 +235,6 @@ if($GLOBALS['conn']){
         $request = mysqli_query($GLOBALS['conn'],$q);  
        
     }
- 
-
     }
 
 }else{
