@@ -145,7 +145,7 @@ input[type=submit]
     background-color: #A3CB38;
     border: 1px solid #A3CB38;
     color: rgba(255,255,255);
-    margin-right: 15px;
+    margin-bottom: 20px;
 }
 
 .btn-ghost:link,
@@ -510,14 +510,21 @@ input[type=checkbox]{
     font-size: 80%;
 }
 
-.profile-div p{
+.profile-div{
     width:60%;
     height: auto;
     margin: 0 auto;
     text-align: center; 
 }
-.profile-div p span {
+
+.info-p{
     font-size: 150%;
+    height: 45vh;
+}
+
+.info-p-button{
+    font-size: 150%;
+    height: 30vh;
 }
 
 .profile-div label{
@@ -528,10 +535,34 @@ input[type=checkbox]{
     border: 1px solid #A3CB38;
     padding: 30px;
     width: 51%;
-    margin: 0 auto;
-    margin-bottom: 20px;
+    margin: 0 auto 20px auto;
 }
 
+
+.orders-div{
+    margin:0 auto;
+    width:400px;
+    height: auto;
+    text-align: center;
+}
+
+.orders-div form{
+    text-align: center;
+    margin: 20px auto;
+}
+
+.orders-div table{
+    padding:0 auto;
+    margin: auto;
+}
+
+.orders-div table th{
+    padding:10px 0 10px 20px;
+}
+
+.orders-div table td{
+    padding:10px 0 10px 0;
+}
 
 #div-saved-data{
     height: 45vh;
@@ -540,6 +571,7 @@ input[type=checkbox]{
 #div-saved-data a{
     margin-top: 20px;
 }
+
 
 /*------------------------------------------------*/
 /* FOOTER */

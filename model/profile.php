@@ -81,14 +81,18 @@ $_SESSION['modifyData'] = "
 </div>
 </div>";
 
-            
+$_SESSION['returnToProfile'] = "<form action=\"../view/showProfile.php\" method=\"POST\">
+                                    <input name = \"user\" type=\"hidden\" value='".$_SESSION['user']."'>
+                                    <input name = \"pass\" type=\"hidden\" value='".$_SESSION['pass']."'>
+                                    <input name = \"profile\" type=\"submit\" class=\"btn \" value=\"Volver a mi perfil\"></input>
+                                <form>";           
 
 
 if($GLOBALS['conn']){
  
-   class Registro{
+   class Registry{
     
-    public function muestraDatos(){
+    public function showData(){
        $q="SELECT COUNT(*) as count FROM user_detail WHERE user_id = '".$_SESSION['user']."'";
         $request = mysqli_query($GLOBALS['conn'],$q); 
         $array = mysqli_fetch_array($request);
@@ -144,10 +148,11 @@ if($GLOBALS['conn']){
                 '. $array['other_address_data'] . '<br>' .
                 '</div>
                 </div>
-                </div>'         
-                    ;
-                       
-
+                </div>' . 
+                "<form action=\"../view/showOrders.php\" method=\"POST\">
+                    <input name = \"user\" type=\"hidden\" value='".$_SESSION['user']."'>
+                    <input id =\"orders\" name = \"orders\" type=\"submit\" class=\"btn btn-primary\" value=\"Ver mis pedidos\"></input>
+                 <form>";
         }     
     }
     public function login(){
@@ -155,28 +160,26 @@ if($GLOBALS['conn']){
         $request = mysqli_query($GLOBALS['conn'],$q);  
         $array = mysqli_fetch_array($request);
             if($array['contar']>0){
-                $registro = new Registro();
-                $registro->muestraDatos(); 
+                $registry = new Registry();
+                $registry->showData(); 
                 echo $_SESSION['modifyData'];
-
-                
             }
             if ($array['contar'] == 0 ) {
                 echo '<p>No estás registrado o tus datos son incorrectos</p>'; 
             }
     }  
-    public function registrar(){
+    public function register(){
         $q="SELECT COUNT(*) as count FROM users WHERE user_id = '".$_SESSION['user']."'";
         $request = mysqli_query($GLOBALS['conn'],$q); 
         $array = mysqli_fetch_array($request);
 
         if($array['count']>0){
-            echo "<p> <span> Usuario ya registrado </span></p>";
+            echo "<p class =\"info-p\"> <span> Usuario ya registrado </span></p>";
         }else{
             $q="INSERT INTO users (user_id,pass) VALUES ('".$_SESSION['user']."','".$_SESSION['pass']."')";
             $request = mysqli_query($GLOBALS['conn'],$q);  
-            echo "<p> <span>Te hemos registrado, ¡Gracias! </span> <br><br></p><br>";    
-            echo $_SESSION['modifyData'];                
+            echo "<p  class =\"info-p\">Te hemos registrado, ¡Gracias!<br><br></p><br>";    
+            echo $_SESSION['returnToProfile'];                
                     }
     }
 
@@ -189,25 +192,20 @@ if($GLOBALS['conn']){
         $_SESSION['letter'] = $_POST['letter'];
         $_SESSION['otherdata'] = $_POST['otherdata'];
         $_SESSION['phone'] = $_POST['phone'];
-        $registro = new Registro();
+        $registry = new Registry();
         
         $q="SELECT COUNT(*) as count FROM user_detail WHERE user_id = '".$_SESSION['user']."'";
         $request = mysqli_query($GLOBALS['conn'],$q); 
         $array = mysqli_fetch_array($request);
 
         if($array['count']>0){
-            $registro->updateUserData();
-            echo("tienedatos");
+            $registry->updateUserData();
         }else{
-            $registro->saveUserData();
+            $registry->saveUserData();
         }
         echo "<p> <span>" . "Gracias " . $_SESSION['name'] . ", " ."
-        hemos guardado tus datos. <br></span><p>
-        <form action=\"../view/showProfile.php\" method=\"POST\">
-            <input name = \"user\" type=\"hidden\" value='".$_SESSION['user']."'>
-            <input name = \"pass\" type=\"hidden\" value='".$_SESSION['pass']."'>
-            <input id =\"profile\" name = \"profile\" type=\"submit\" class=\"btn btn-primary\" value=\"Volver a mi perfil\"></input>
-        <form>";
+        hemos guardado tus datos. <br></span><p>";
+        echo $_SESSION['returnToProfile'];
     }
 
     public function saveUserData( ){
