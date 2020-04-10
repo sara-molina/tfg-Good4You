@@ -503,11 +503,17 @@ input[type=checkbox]{
     width: 60%;
     height: auto;
     margin: 0 auto;
+    text-align: left;
 }
 
 .login-form input[type=submit]{
     margin: 20px auto;
     font-size: 80%;
+}
+
+.save-data-form input[type=submit]{
+    margin: 20px 40%;
+    font-size: 100%;
 }
 
 .profile-div{
@@ -534,10 +540,10 @@ input[type=checkbox]{
 .data-form{
     border: 1px solid #A3CB38;
     padding: 30px;
-    width: 51%;
+    width: 85%;
     margin: 0 auto 20px auto;
+    text-align: left;
 }
-
 
 .orders-div{
     margin:0 auto;

@@ -13,7 +13,7 @@ $_SESSION['modifyData'] = "
     <form id =\"forumarioDatos\" action=\"../view/showProfile.php\"  onsubmit = \"return validateData()\" method=\"POST\">
     <input name = \"user\" type=\"hidden\" value='".$_SESSION['user']."'>
     <input name = \"pass\" type=\"hidden\" value='".$_SESSION['pass']."'>
-        <div class=\"form-group\">
+        <div class= \"save-data-form\">
             <div class =\"row\">
                 <div class=\"col span-1-of-3\">
                     <label for=\"name\">Nombre</label>
@@ -139,20 +139,23 @@ if($GLOBALS['conn']){
                 <div class="col span-2-of-3">
                 '. $array['phone'] . '<br>' .
                 '</div>
-                </div>' .      
-                '<div class ="row">
-                <div class="col span-1-of-3">
-                    <p> Otros datos: 
-                </div>
-                <div class="col span-2-of-3">
-                '. $array['other_address_data'] . '<br>' .
-                '</div>
-                </div>
-                </div>' . 
-                "<form action=\"../view/showOrders.php\" method=\"POST\">
+                </div>';
+                if($array['other_address_data'] != 0 ){
+                    echo '<div class ="row">
+                    <div class="col span-1-of-3">
+                        <p> Otros datos: 
+                    </div>
+                    <div class="col span-2-of-3">
+                    '. $array['other_address_data'] . '<br>' .
+                    '</div>';
+                };      
+                 echo
+                "</div>
+                <form action=\"../view/showOrders.php\" method=\"POST\">
                     <input name = \"user\" type=\"hidden\" value='".$_SESSION['user']."'>
                     <input id =\"orders\" name = \"orders\" type=\"submit\" class=\"btn btn-primary\" value=\"Ver mis pedidos\"></input>
-                 <form>";
+                 <form>
+                 </div>";
         }     
     }
     public function login(){
