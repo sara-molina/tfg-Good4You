@@ -52,13 +52,7 @@
     <footer>
         <div class="row">
             <div class="col span-2-of-3">
-                <ul class="footer-nav">
-                    <li><a href="#">About us</a></li>
-                    <li> <a href="#">Blog</a> </li>  
-                    <li><a href="#">Press</a></li>
-                    <li><a href="#">iOS App</a></li>  
-                    <li><a href="#">Android App</a> </li>   
-                </ul>
+            <p>Todos los derechos reservados</p>
             </div>
             <div class="col span-1-of-3">
                 <ul class="footer-nav rss-div">

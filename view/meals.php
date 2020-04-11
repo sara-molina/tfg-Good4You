@@ -56,12 +56,7 @@
             <div class="col span-2-of-3">
             </div>
             <div class="col span-1-of-3">
-                <ul class="footer-nav rss-div">
-                    <li><a class = "rss-a"><i class="rss-icons im im-twitter"></i></a></li>
-                    <li><a class = "rss-a"><i class="rss-icons im im-facebook"></i></a></li>
-                    <li><a class = "rss-a"><i class="rss-icons im im-instagram"></i></a></li>
-                    <li><a ><i class="rss-icons im im-google-plus"></i></a></li>
-                </ul>
+             <p>Todos los derechos reservados</p>
             </div>
         </div>
 

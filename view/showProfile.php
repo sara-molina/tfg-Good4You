@@ -26,7 +26,6 @@
                     <li><a href="index.html" class = 'js--scroll-inicio'>Inicio</a></li>
                     <li><a href="meals.php">Nuestros platos</a>
                     <li><a href="contact.html" class = 'js--scroll-form'>Contacto</a>
-                    <li><a href="login.html></a>
                     <li><a href="order.html">Haz tu pedido</a> 
                 </ul>
                 <a class ="mobile-nav"><ion-icon class= "mobile-nav-icon js--nav-icon" name="menu-outline"></ion-icon></a> 
@@ -72,13 +71,7 @@
     <footer>
         <div class="row">
             <div class="col span-2-of-3">
-                <ul class="footer-nav">
-                    <li><a href="#">About us</a></li>
-                    <li> <a href="#">Blog</a> </li>  
-                    <li><a href="#">Press</a></li>
-                    <li><a href="#">iOS App</a></li>  
-                    <li><a href="#">Android App</a> </li>   
-                </ul>
+            <p>Todos los derechos reservados</p>
             </div>
             <div class="col span-1-of-3">
                 <ul class="footer-nav rss-div">

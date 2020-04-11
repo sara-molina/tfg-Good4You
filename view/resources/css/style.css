@@ -222,7 +222,6 @@ header{
 .main-nav li{
     display: inline-block;
     margin-left: 10px;
-    
 }
 
 .main-nav li a:link,
@@ -633,7 +632,7 @@ footer{
 
 footer p {
     color:#888;
-    text-align: center;
+    text-align: left;
     font-size: 90%;
 }
 .im-facebook,
