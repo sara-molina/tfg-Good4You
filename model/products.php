@@ -19,19 +19,19 @@ if($GLOBALS['conn']){
                 <figure class =\"meal-photo clearfix\">" .  "<img src=\"resources/src/".$fila['img']."\" alt=\"Ensalada de tallarines fríos con huevo, kikos y langostinos\">
             </figure>   
         </div>
-        <div class = \"col span-2-of-3 meal\">
-            <h3>".$fila['name']."</h3>
-            <p class=\"meal-description\">".$fila['description']."</p>
-            <p class=\"meal-price\">".$fila['price']."€</p>
-        </div>
-    </div>";
-        }
         
+            <div class = \"col span-2-of-3 meal\">
+                <h3>".$fila['name']."</h3>
+                <p class=\"meal-description\">".$fila['description']."</p>
+                <p class=\"meal-price\">".$fila['price']."€</p>
+            </div> </div>";
+        }
     }
 
-   }
-        
-}else{
+       
+    }
+
+   }else{
     echo "no conectado";
 }
 ?>

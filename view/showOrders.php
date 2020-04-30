@@ -24,7 +24,7 @@
             <div class = "row">
                 <ul class = "main-nav js--main-nav">
                     <li><a href="index.html" class = 'js--scroll-inicio'>Inicio</a></li>
-                    <li><a href="meals.php">Nuestros platos</a>
+                    <li><a href="showMeals.php">Nuestros platos</a>
                     <li><a href="contact.html" class = 'js--scroll-form'>Contacto</a>
                     <li><a href="login.html">Accede</a>
                     <li><a href="order.html">Haz tu pedido</a> 
@@ -39,13 +39,13 @@
     <?php 
     require ('../model/orders.php');
     $order = new Order();
+    
 
     if(isset($_POST['orders'])){
         echo "<div class=\"orders-div\">" ;
         $order->showOrders();
         echo "</div>";
-       
-    }
+    } 
 
     ?>
     </section>

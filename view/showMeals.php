@@ -18,7 +18,7 @@
                 
                 <ul class = "main-nav js--main-nav">
                     <li><a href="index.html" class = 'js--scroll-inicio'>Inicio</a></li>
-                    <li><a href="meals.html">Nuestros platos</a>
+                    <li><a href="showMeals.html">Nuestros platos</a>
                     <li><a href="contact.html" class = 'js--scroll-form'>Contacto</a>
                     <li><a href="login.html">Accede</a>
                     <li><a href="order.html">Haz tu pedido</a>
@@ -27,10 +27,10 @@
                 </div>
         </nav>
         <div id="init" class ="hero-text-box js--inicio">
-            <h3>Un mundo de sabores <br> con los ingredientes más sanos</h3>
-            <p>Si te interesa la comida buena para tu salud, este es tu sitio pero además en Good4You tenemos un compromiso con nuestro entorno. 
+            <h3>Un mundo de sabores <br> con los ingredientes más sanos <br> ¡Haz tu pedido ya!</h3>
+            <p>Si te interesa la comida buena para tu salud, este es tu sitio.demás en Good4You tenemos un compromiso con nuestro entorno. 
                 Todos nuestros productos son de primeras calidades y bio. <br> <br>
-                Todas nuestras verduras han sido cultivadas por explotaciones ecológicas que no utilizan pesticidas ni químicos. <br> <br>
+                Nuestras verduras han sido cultivadas por explotaciones ecológicas que no utilizan pesticidas ni químicos. <br> <br>
                 Nuestros productos de origen animal provienen de animales criados en granjas en libertad </p>
                 </div>
 
@@ -41,14 +41,14 @@
         <div class="row">
             <h2 class = "section-meals-tittles">Nuestras ensaladas</h2>
         </div>
+        
+        <?php 
+            require ('../model/products.php');
+            $products = new Products();
+            $products->showProducts();
 
-                         <?php 
-                        require ('../model/products.php');
-                        $products = new Products();
-                        $products->showProducts();
-
-                    ?>
-                   
+        ?>
+                
 
     </section>
     <footer>

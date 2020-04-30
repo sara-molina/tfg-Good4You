@@ -118,7 +118,6 @@ a:visited{
 a:hover,
 a:active{
     color:#555;
-    text-decoration: none;
     padding-bottom: 1 px;
     border-bottom: 1px solid transparent;
 }
@@ -145,7 +144,7 @@ input[type=submit]
     background-color: #A3CB38;
     border: 1px solid #A3CB38;
     color: rgba(255,255,255);
-    margin-bottom: 20px;
+    margin: 20px;
 }
 
 .btn-ghost:link,
@@ -175,7 +174,14 @@ input[type=submit]
     border: 1px solid #61750f;
     color: rgba(255,255,255); 
 }
+#btn-send-product{
+    font-size: 130%;
+    margin: 20px;
+}
 
+.btn-add{
+    margin: 20px;
+}
 
 /*------------------------------------------------*/
 /* HEADER */
@@ -349,6 +355,11 @@ header{
     margin-top: 20%;
     margin-bottom: 10%;
 }
+.meal-price{
+    margin: 20px 0;
+    text-align: center;
+    background-color: #efefef;
+}
 
 
 /*------------------------------------------------*/
@@ -440,7 +451,9 @@ cite img{
 /*------------------------------------------------*/
 /* FORM */
 /*------------------------------------------------*/
-
+.section-form{
+    background-color: #efefef;
+}
 .contact-form{
     width:60%;
     margin: 0 auto;
@@ -449,12 +462,13 @@ cite img{
 
 input[type=text],
 input[type=email],
+input[type=password],
 input[type=tel],
 select,
 textarea{
     width:100%;
     border-radius: 3px;
-    border: 1px solid #f7f7f7;
+    border: 1px solid #c7c2c2;
 }
 
 textarea{
@@ -493,14 +507,26 @@ input[type=checkbox]{
     margin-top: 0;
 }
 
+.new-order h3{
+text-align: center;
+margin-top: 30px;
+}
+
+.form-units{
+    text-align: right;
+}
+
+
 /*------------------------------------------------*/
 /* PROFILE */
 /*------------------------------------------------*/
+.form-container{
+    height: 41vh;
+}
 .login-form{
     border: 1px solid #A3CB38;
     padding: 60px;
     width: 60%;
-    height: auto;
     margin: 0 auto;
     text-align: left;
 }
@@ -524,12 +550,10 @@ input[type=checkbox]{
 
 .info-p{
     font-size: 150%;
-    height: 45vh;
 }
 
-.info-p-button{
-    font-size: 150%;
-    height: 30vh;
+.info-p-div{
+    height: 50vh;
 }
 
 .profile-div label{

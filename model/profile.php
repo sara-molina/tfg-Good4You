@@ -6,7 +6,6 @@ session_start();
 $_SESSION['user']= $_POST['user'];
 $_SESSION['pass'] =  $_POST['pass'];
 $_SESSION['modifyData'] = "
-
 <div class =\"row\">
 <div class=\"login-form\">
     <p>Añade o modifica tus datos: </p> <br>
@@ -75,7 +74,7 @@ $_SESSION['modifyData'] = "
              <div class=\"col span-2-of-3\">
                  <input name = \"phone\" type=\"text\" class=\"form-control\" id=\"street\">
               </div>                       
-            <input id =\"guarda\" name = \"guarda\" type=\"submit\" class=\"btn btn-primary\" value=\"Guardar\"></input>
+            <input id =\"guarda\" name = \"guarda\" type=\"submit\" class=\"btn btn-primary\" value=\"Guardar\"/>
         </form>
     </div>   
 </div>
@@ -84,8 +83,8 @@ $_SESSION['modifyData'] = "
 $_SESSION['returnToProfile'] = "<form action=\"../view/showProfile.php\" method=\"POST\">
                                     <input name = \"user\" type=\"hidden\" value='".$_SESSION['user']."'>
                                     <input name = \"pass\" type=\"hidden\" value='".$_SESSION['pass']."'>
-                                    <input name = \"profile\" type=\"submit\" class=\"btn \" value=\"Volver a mi perfil\"></input>
-                                <form>";           
+                                    <input name = \"profile\" type=\"submit\" class=\"btn \" value=\"Volver a mi perfil\"/>
+                                </form>";           
 
 
 if($GLOBALS['conn']){
@@ -151,9 +150,9 @@ if($GLOBALS['conn']){
                 };      
                  echo
                 "</div>
-                <form action=\"../view/showOrders.php\" method=\"POST\">
+                <form action=\"../view/showProfile.php\" method=\"POST\">
                     <input name = \"user\" type=\"hidden\" value='".$_SESSION['user']."'>
-                    <input id =\"orders\" name = \"orders\" type=\"submit\" class=\"btn btn-primary\" value=\"Ver mis pedidos\"></input>
+                    <input id =\"orders\" name = \"orders\" type=\"submit\" class=\"btn btn-primary\" value=\"Ver mis pedidos\"/>
                  <form>
                  </div>";
         }     
@@ -168,7 +167,8 @@ if($GLOBALS['conn']){
                 echo $_SESSION['modifyData'];
             }
             if ($array['contar'] == 0 ) {
-                echo '<p>No estás registrado o tus datos son incorrectos</p>'; 
+                echo '<p>No estás registrado o tus datos son incorrectos</p>';
+                echo $_SESSION['returnToProfile'];
             }
     }  
     public function register(){
@@ -177,11 +177,13 @@ if($GLOBALS['conn']){
         $array = mysqli_fetch_array($request);
 
         if($array['count']>0){
-            echo "<p class =\"info-p\"> <span> Usuario ya registrado </span></p>";
+            echo "<div class=\"info-p-div\">
+            <p class =\"info-p\"> <span> Usuario ya registrado </span></p>
+            </div>";
         }else{
             $q="INSERT INTO users (user_id,pass) VALUES ('".$_SESSION['user']."','".$_SESSION['pass']."')";
             $request = mysqli_query($GLOBALS['conn'],$q);  
-            echo "<p  class =\"info-p\">Te hemos registrado, ¡Gracias!<br><br></p><br>";    
+            echo "<p  class =\"info-p\">Te hemos registrado, ¡Gracias!<br><br><br></p>";    
             echo $_SESSION['returnToProfile'];                
                     }
     }
@@ -236,6 +238,46 @@ if($GLOBALS['conn']){
         $request = mysqli_query($GLOBALS['conn'],$q);  
        
     }
+
+    public function showOrders(){
+        $q="SELECT COUNT(*) as count FROM orders WHERE user_id = '".$_SESSION['user']."'";
+        $request = mysqli_query($GLOBALS['conn'],$q); 
+        $array = mysqli_fetch_array($request);
+
+        if($array['count']>0){
+            $q="SELECT * FROM orders WHERE user_id = '".$_SESSION['user']."'";
+            $peticion = mysqli_query($GLOBALS['conn'],$q);           
+        
+            echo '<div class ="row">
+                         <h3> Tus órdenes </h3>
+                  </div>
+                <div class ="row orders-div">
+                    <table>
+                        <tr>
+                            <th>Nº de pedido</th>
+                            <th>Productos</th>
+                        </tr>';
+                        while($row=mysqli_fetch_array($peticion)){
+                            echo '<tr>' . '<td>'.$row['order_id'].'</td>';
+                            echo '<td>'.$row['product_id'].'</td></tr>'; 
+                        };
+                echo '
+                    </table>
+                    </div>
+                ' ."
+                <div class =\"row\">";
+                echo $_SESSION['returnToProfile'];
+
+                echo "<form>
+            </div>
+            </div>";
+        }else {
+            echo "<div class=\"info-p-div\">
+            <p class =\"info-p\">No has hecho ningún pedido.</p>"
+            . $_SESSION['returnToProfile'] .  "</div>";
+        }
+    } 
+
     }
 
 }else{
