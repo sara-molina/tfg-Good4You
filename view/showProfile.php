@@ -17,6 +17,11 @@
     <link rel="stylesheet" type="text/css" href="vendors/css/iconmonstr-iconic-font.min.css">
     <link href="https://fonts.googleapis.com/css?family=Lato:100,300,300i,400&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Old+Standard+TT&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> 
+    <script src="resources/js/script.js"></script>
+    <script src="vendors/js/jquery.waypoints.min.js"></script>
+    <script src="../controller/validate.js"></script>
 </head>
 <body>
     <div class ="contact-div-nav">
@@ -44,7 +49,6 @@
         echo "<div class=\"profile-div\">" ;
         $registry->register();
         echo "</div>";
-       
     }
 
     if(isset($_POST['login'])) {
@@ -71,9 +75,6 @@
         echo "</div>";
     } 
 
-
-    
-
     ?>
 </section>
     <footer>
@@ -93,11 +94,7 @@
 
     </footer>
 
-    <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> 
-    <script src="resources/js/script.js"></script>
-    <script src="vendors/js/jquery.waypoints.min.js"></script>
-    <script src="../controller/validate.js"></script>
+
     
     
 </body>

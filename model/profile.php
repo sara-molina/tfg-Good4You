@@ -5,11 +5,12 @@ session_start();
 
 $_SESSION['user']= $_POST['user'];
 $_SESSION['pass'] =  $_POST['pass'];
+
 $_SESSION['modifyData'] = "
 <div class =\"row\">
 <div class=\"login-form\">
     <p>Añade o modifica tus datos: </p> <br>
-    <form id =\"forumarioDatos\" action=\"../view/showProfile.php\"  onsubmit = \"return validateData()\" method=\"POST\">
+    <form id =\"forumarioDatos\" action=\"../view/showProfile.php\"  method=\"POST\">
     <input name = \"user\" type=\"hidden\" value='".$_SESSION['user']."'>
     <input name = \"pass\" type=\"hidden\" value='".$_SESSION['pass']."'>
         <div class= \"save-data-form\">
@@ -18,7 +19,7 @@ $_SESSION['modifyData'] = "
                     <label for=\"name\">Nombre</label>
                 </div>
                 <div class=\"col span-2-of-3\">
-                    <input name = \"name\" type=\"text\" class=\"form-control\" id=\"name\">
+                    <input name = \"name\" type=\"text\" class=\"form-control\" id=\"name\" required>
                  </div>
             </div>
             <div class =\"row\">
@@ -26,7 +27,7 @@ $_SESSION['modifyData'] = "
                     <label for=\"lastname\">Apellidos</label>
                 </div>
                 <div class=\"col span-2-of-3\">
-                    <input name = \"lastname\" type=\"text\" class=\"form-control\" id=\"street\">
+                    <input name = \"lastname\" type=\"text\" class=\"form-control\" id=\"last-name\" required>
                  </div>
             </div>
             <div class =\"row\">
@@ -34,7 +35,7 @@ $_SESSION['modifyData'] = "
                     <label for=\"street\">Calle</label>
                 </div>
                 <div class=\"col span-2-of-3\">
-                    <input name = \"street\" type=\"text\" class=\"form-control\" id=\"street\">
+                    <input name = \"street\" type=\"text\" class=\"form-control\" id=\"street\" required>
                  </div>
             </div>  
             <div class =\"row\">
@@ -42,7 +43,7 @@ $_SESSION['modifyData'] = "
                     <label for=\"number\">Número</label>
                 </div>
                 <div class=\"col span-2-of-3\">
-                    <input name = \"number\" type=\"text\" class=\"form-control\" id=\"street\">
+                    <input name = \"number\" type=\"text\" class=\"form-control\" id=\"number\" required>
                  </div>
             </div>  
             <div class =\"row\">
@@ -50,7 +51,7 @@ $_SESSION['modifyData'] = "
                     <label for=\"flat\">Piso</label>
                 </div>
                 <div class=\"col span-2-of-3\">
-                    <input name = \"flat\" type=\"text\" class=\"form-control\" id=\"street\">
+                    <input name = \"flat\" type=\"text\" class=\"form-control\" id=\"flat\" required>
                  </div>
             </div>  
             <div class =\"row\">
@@ -58,21 +59,21 @@ $_SESSION['modifyData'] = "
                 <label for=\"letter\">Letra</label>
             </div>
             <div class=\"col span-2-of-3\">
-                <input name = \"letter\" type=\"text\" class=\"form-control\" id=\"street\">
+                <input name = \"letter\" type=\"text\" class=\"form-control\" id=\"letter\" required>
              </div>
              <div class =\"row\">
             <div class=\"col span-1-of-3\">
                 <label for=\"otherdata\">Otros datos</label>
             </div>
             <div class=\"col span-2-of-3\">
-                <input name = \"otherdata\" type=\"text\" class=\"form-control\" id=\"street\">
+                <input name = \"otherdata\" type=\"text\" class=\"form-control\" id=\"otherdata\" required>
              </div>
              <div class =\"row\">
              <div class=\"col span-1-of-3\">
                  <label for=\"phone\">Teléfono</label>
              </div>
              <div class=\"col span-2-of-3\">
-                 <input name = \"phone\" type=\"text\" class=\"form-control\" id=\"street\">
+                 <input name = \"phone\" type=\"text\" class=\"form-control\" id=\"phone\" required>
               </div>                       
             <input id =\"guarda\" name = \"guarda\" type=\"submit\" class=\"btn btn-primary\" value=\"Guardar\"/>
         </form>
@@ -152,8 +153,9 @@ if($GLOBALS['conn']){
                 "</div>
                 <form action=\"../view/showProfile.php\" method=\"POST\">
                     <input name = \"user\" type=\"hidden\" value='".$_SESSION['user']."'>
+                    <input name = \"pass\" type=\"hidden\" value='".$_SESSION['pass']."'>
                     <input id =\"orders\" name = \"orders\" type=\"submit\" class=\"btn btn-primary\" value=\"Ver mis pedidos\"/>
-                 <form>
+                 </form>
                  </div>";
         }     
     }
@@ -208,7 +210,7 @@ if($GLOBALS['conn']){
         }else{
             $registry->saveUserData();
         }
-        echo "<p> <span>" . "Gracias " . $_SESSION['name'] . ", " ."
+        echo "<p class=\"info-p\"> <span>" . "Gracias " . $_SESSION['name'] . ", " ."
         hemos guardado tus datos. <br></span><p>";
         echo $_SESSION['returnToProfile'];
     }
