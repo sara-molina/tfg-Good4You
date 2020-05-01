@@ -247,8 +247,11 @@ if($GLOBALS['conn']){
         $array = mysqli_fetch_array($request);
 
         if($array['count']>0){
-            $q="SELECT * FROM orders WHERE user_id = '".$_SESSION['user']."'";
-            $peticion = mysqli_query($GLOBALS['conn'],$q);           
+            $q="SELECT * FROM orders o
+            INNER JOIN order_products op on o.order_id = op.order_id 
+            INNER JOIN products p on op.product_id = p.product_id
+            WHERE user_id = '".$_SESSION['user']."'";
+            $peticion = mysqli_query($GLOBALS['conn'],$q);        
         
             echo '<div class ="row">
                          <h3> Tus órdenes </h3>
@@ -261,7 +264,7 @@ if($GLOBALS['conn']){
                         </tr>';
                         while($row=mysqli_fetch_array($peticion)){
                             echo '<tr>' . '<td>'.$row['order_id'].'</td>';
-                            echo '<td>'.$row['product_id'].'</td></tr>'; 
+                            echo '<td>'.$row['name'].'</td></tr>'; 
                         };
                 echo '
                     </table>
