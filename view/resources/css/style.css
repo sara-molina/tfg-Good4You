@@ -2,7 +2,7 @@
 
 
 /*------------------------------------------------*/
-/* BASIC SETUP */
+/* STARTER CONFIG */
 /*------------------------------------------------*/
 
 *{
@@ -32,9 +32,6 @@ body {
     visibility: hidden;
 }
 
-/*------------------------------------------------*/
-/* REUSABLE COMPONENTS */
-/*------------------------------------------------*/
 .row{
     max-width: 1140px;
     margin: 0 auto;
@@ -182,41 +179,9 @@ input[type=submit]
 .btn-add{
     margin: 20px;
 }
-
 /*------------------------------------------------*/
-/* HEADER */
+/* NAVIGATION */
 /*------------------------------------------------*/
-header{
-    background-image: -webkit-gradient(linear,left top, left bottom,from(rgba(0,0,0,0.7)),to(rgba(0,0,0,0.7))), url(../src/principal.jpg);
-    background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)), url(../src/principal.jpg);
-    background-size: cover;
-    background-position: center;
-    height:100vh;
-    background-attachment: fixed;
-    text-align: center;
-}
-
-.hero-text-box{
-    position: absolute;
-    width: 1140px;
-    top:50%;
-    left:50%;
-    -webkit-transform: translate(-50%,-50%);
-            transform: translate(-50%,-50%);
-}
-
-.hero-text-box h2{
-    
-    text-transform:none;
-    color: white;
-    margin-bottom: 20px;
-}
-
-.hero-text-box p{
-    color: #999;
-    margin-bottom: 20px;
-}
-
 
 /* Main navy*/
 .main-nav{
@@ -299,30 +264,129 @@ header{
 }
 
 
-/*------------------------------------------------*/
-/* FEATURES */
-/*------------------------------------------------*/
- .section-features .long-copy{
-    margin-bottom: 30px;
- }
+/* FOOTER */
+
+
+footer{
+    background-color: #333;
+    padding: 40px;
+    font-size: 80%;
+}
+
+.footer-nav{
+    list-style: none;
+    float: left;
+}
+
+.rss-icons{
+    font-size: 90%;
+    margin-right: 0%;
+    margin-top: 4px;
+}
+.footer-nav li
+{
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.rss-div{
+    float:right;
+}
+
+.footer-nav li:last-child{
+    margin:0;
+}
+
+.footer-nav li a:link,
+.footer-nav li a:visited,
+.rss-div  li a:link,
+.rss-div  li a:visited{
+    text-decoration: none;
+    border:0;
+    color: #888;
+    -webkit-transition: color 0.2;
+    transition: color 0.2;
+}
+
+.footer-nav li a:hover,
+.footer-nav li a:active,
+.rss-icons li a:hover,
+.rss-icons li a:active{
+    color:#ddd;
+}
+
+footer p {
+    color:#888;
+    text-align: left;
+    font-size: 90%;
+}
+.im-facebook,
+.im-twitter,
+.im-google-plus,
+.im-instagram{
+    -webkit-transition: color 0.2s;
+    transition: color 0.2s;
+}
+
+
+.im-facebook:hover{
+    color:#3b5999;
+}
+.im-twitter:hover{
+    color: #55acee;
+}
+.im-google-plus:hover{
+    color: #dd4b39;
+}
+.im-instagram:hover{
+    color: #e4405f;
+}
+
 
 /*------------------------------------------------*/
-/* MEALS */
+/*------------------------------------------------*/
+                    /* index.html */
+/*------------------------------------------------*/
 /*------------------------------------------------*/
 
-.section-meals{
-    padding: 0;
+
+/*------------------------------------------------*/
+/* HEADER */
+/*------------------------------------------------*/
+header{
+    background-image: -webkit-gradient(linear,left top, left bottom,from(rgba(0,0,0,0.7)),to(rgba(0,0,0,0.7))), url(../src/principal.jpg);
+    background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)), url(../src/principal.jpg);
+    background-size: cover;
+    background-position: center;
+    height:100vh;
+    background-attachment: fixed;
     text-align: center;
 }
-.meals-showcase{
-    list-style: none;
+
+.hero-text-box{
+    position: absolute;
+    width: 1140px;
+    top:50%;
+    left:50%;
+    -webkit-transform: translate(-50%,-50%);
+            transform: translate(-50%,-50%);
 }
 
-.meals-showcase li{
-    display:block;
-    float: left;
-    width: 25%;
+.hero-text-box h2{
+    
+    text-transform:none;
+    color: white;
+    margin-bottom: 20px;
 }
+
+.hero-text-box p{
+    color: #999;
+    margin-bottom: 20px;
+}
+
+/*------------------------------------------------*/
+/* INDEX MEALS PHOTOS */
+/*------------------------------------------------*/
 
 .meal-photo{
     width: 100%;
@@ -355,12 +419,6 @@ header{
     margin-top: 20%;
     margin-bottom: 10%;
 }
-.meal-price{
-    margin: 20px 0;
-    text-align: center;
-    background-color: #efefef;
-}
-
 
 /*------------------------------------------------*/
 /* CITIES */
@@ -448,9 +506,14 @@ cite img{
 }
 
 
+
+
 /*------------------------------------------------*/
-/* FORM */
 /*------------------------------------------------*/
+                    /* contact.html */
+/*------------------------------------------------*/
+/*------------------------------------------------*/
+
 .section-form{
     background-color: #efefef;
 }
@@ -483,23 +546,26 @@ input[type=checkbox]{
 }
 
 /*------------------------------------------------*/
-/* ORDER */
 /*------------------------------------------------*/
-.order-div{
+                    /* order.html */
+/*------------------------------------------------*/
+/*------------------------------------------------*/
+
+.how-to-order-div{
     width: 80%; 
     text-align: center;
     margin: 100px auto;
 }
 
-.order-div p{
+.how-to-order-div p{
     margin-bottom: 10px;
 }
 
-.order-div p span{
+.how-to-order-div p span{
     font-size: 200%;
 }
 
-.order-div h3{
+.how-to-order-div h3{
     margin-top: 50px;
 }
 
@@ -507,46 +573,15 @@ input[type=checkbox]{
     margin-top: 0;
 }
 
-.new-order h3{
-text-align: center;
-margin-top: 30px;
-}
-
-.form-units{
-    text-align: right;
-}
-
+/*------------------------------------------------*/
+/*------------------------------------------------*/
+                    /* login.html */
+/*------------------------------------------------*/
+/*------------------------------------------------*/
 
 /*------------------------------------------------*/
-/* PROFILE */
+/* GENERICS */
 /*------------------------------------------------*/
-.form-container{
-    height: 41vh;
-}
-.login-form{
-    border: 1px solid #A3CB38;
-    padding: 60px;
-    width: 60%;
-    margin: 0 auto;
-    text-align: left;
-}
-
-.login-form input[type=submit]{
-    margin: 20px auto;
-    font-size: 80%;
-}
-
-.save-data-form input[type=submit]{
-    margin: 20px 40%;
-    font-size: 100%;
-}
-
-.profile-div{
-    width:60%;
-    height: auto;
-    margin: 0 auto;
-    text-align: center; 
-}
 
 .info-p{
     font-size: 150%;
@@ -556,17 +591,64 @@ margin-top: 30px;
     height: 50vh;
 }
 
+/*------------------------------------------------*/
+/* LOGIN */
+/*------------------------------------------------*/
+.form-container{
+    height: 41vh;
+}
+
+.profile-form{
+    border: 1px solid #A3CB38;
+    padding: 60px;
+    width: 60%;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.profile-form input[type=submit]{
+    margin: 20px auto;
+    font-size: 80%;
+}
+
+/*------------------------------------------------*/
+/* PROFILE */
+/*------------------------------------------------*/
+
+.profile-div{
+    width:54%;
+    height: auto;
+    margin: 0 auto;
+    text-align: center; 
+}
+
+
 .profile-div label{
     text-align: right;
 }
 
-.data-form{
+.data-container{
     border: 1px solid #A3CB38;
     padding: 30px;
     width: 85%;
     margin: 0 auto 20px auto;
     text-align: left;
 }
+
+
+/*------------------------------------------------*/
+/* USER DATA FORM */
+/*------------------------------------------------*/
+.save-data-form input[type=submit]{
+    margin: 20px 40%;
+    font-size: 100%;
+}
+
+
+
+/*------------------------------------------------*/
+/* USER ORDERS */
+/*------------------------------------------------*/
 
 .orders-div{
     margin:0 auto;
@@ -599,106 +681,5 @@ margin-top: 30px;
 
 #div-saved-data a{
     margin-top: 20px;
-}
-
-
-/*------------------------------------------------*/
-/* FOOTER */
-/*------------------------------------------------*/
-
-footer{
-    background-color: #333;
-    padding: 40px;
-    font-size: 80%;
-}
-
-.footer-nav{
-    list-style: none;
-    float: left;
-}
-
-.rss-icons{
-    font-size: 90%;
-    margin-right: 0%;
-    margin-top: 4px;
-}
-.footer-nav li
-{
-    display: inline-block;
-    margin-right: 20px;
-}
-
-.rss-div{
-    float:right;
-}
-
-.footer-nav li:last-child{
-    margin:0;
-}
-
-.footer-nav li a:link,
-.footer-nav li a:visited,
-.rss-div  li a:link,
-.rss-div  li a:visited{
-    text-decoration: none;
-    border:0;
-    color: #888;
-    -webkit-transition: color 0.2;
-    transition: color 0.2;
-}
-
-.footer-nav li a:hover,
-.footer-nav li a:active,
-.rss-icons li a:hover,
-.rss-icons li a:active{
-    color:#ddd;
-}
-
-footer p {
-    color:#888;
-    text-align: left;
-    font-size: 90%;
-}
-.im-facebook,
-.im-twitter,
-.im-google-plus,
-.im-instagram{
-    -webkit-transition: color 0.2s;
-    transition: color 0.2s;
-}
-
-
-.im-facebook:hover{
-    color:#3b5999;
-}
-.im-twitter:hover{
-    color: #55acee;
-}
-.im-google-plus:hover{
-    color: #dd4b39;
-}
-.im-instagram:hover{
-    color: #e4405f;
-}
-
-/*------------------------------------------------*/
-/* Animations */
-/*------------------------------------------------*/
-
-.js--wp-1,
-.js--wp-2,
-.js--wp-3{
-    opacity: 0;
-    animation-duration: 1s;
-}
-
-.js--wp-4{
-    animation-duration: 1s;
-}
-
-.js--wp-1.animated,
-.js--wp-2.animated,
-.js--wp-3.animated {
-    opacity:1;
 }
 

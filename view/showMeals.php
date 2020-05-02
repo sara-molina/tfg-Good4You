@@ -51,12 +51,19 @@
                 
 
     </section>
+    
     <footer>
         <div class="row">
             <div class="col span-2-of-3">
+                <p>Todos los derechos reservados</p>
             </div>
             <div class="col span-1-of-3">
-             <p>Todos los derechos reservados</p>
+                <ul class="footer-nav rss-div">
+                    <li><a class = "rss-a"><i class="rss-icons im im-twitter"></i></a></li>
+                    <li><a class = "rss-a"><i class="rss-icons im im-facebook"></i></a></li>
+                    <li><a class = "rss-a"><i class="rss-icons im im-instagram"></i></a></li>
+                    <li><a ><i class="rss-icons im im-google-plus"></i></a></li>
+                </ul>
             </div>
         </div>
 

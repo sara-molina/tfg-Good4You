@@ -8,7 +8,7 @@ $_SESSION['pass'] =  $_POST['pass'];
 
 $_SESSION['modifyData'] = "
 <div class =\"row\">
-<div class=\"login-form\">
+<div class=\"profile-form\">
     <p>Añade o modifica tus datos: </p> <br>
     <form id =\"forumarioDatos\" action=\"../view/showProfile.php\"  method=\"POST\">
     <input name = \"user\" type=\"hidden\" value='".$_SESSION['user']."'>
@@ -107,7 +107,7 @@ if($GLOBALS['conn']){
             <div class ="row">
                  <h2> Tus datos </h2>
             </div>
-            <div class="data-form">
+            <div class="data-container">
                 <div class ="row">
                     <div class="col span-1-of-3">
                         <p> Nombre: 
@@ -185,8 +185,8 @@ if($GLOBALS['conn']){
         }else{
             $q="INSERT INTO users (user_id,pass) VALUES ('".$_SESSION['user']."','".$_SESSION['pass']."')";
             $request = mysqli_query($GLOBALS['conn'],$q);  
-            echo "<p  class =\"info-p\">Te hemos registrado, ¡Gracias!<br><br><br></p>";    
-            echo $_SESSION['returnToProfile'];                
+            echo "<div class=\"info-p-div\"><p  class =\"info-p\">Te hemos registrado, ¡Gracias!<br><br><br></p>";    
+            echo $_SESSION['returnToProfile'] . "</div>";                
                     }
     }
 
