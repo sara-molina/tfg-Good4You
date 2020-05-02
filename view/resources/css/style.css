@@ -588,7 +588,7 @@ input[type=checkbox]{
 }
 
 .info-p-div{
-    height: 50vh;
+    height: 50.5vh;
 }
 
 /*------------------------------------------------*/
@@ -662,7 +662,7 @@ input[type=checkbox]{
     margin: 20px auto;
 }
 
-.orders-div table{
+.oinfo-prders-div table{
     padding:0 auto;
     margin: auto;
 }
@@ -675,9 +675,6 @@ input[type=checkbox]{
     padding:10px 0 10px 0;
 }
 
-#div-saved-data{
-    height: 45vh;
-}
 
 #div-saved-data a{
     margin-top: 20px;

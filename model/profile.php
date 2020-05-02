@@ -210,9 +210,10 @@ if($GLOBALS['conn']){
         }else{
             $registry->saveUserData();
         }
-        echo "<p class=\"info-p\"> <span>" . "Gracias " . $_SESSION['name'] . ", " ."
-        hemos guardado tus datos. <br></span><p>";
-        echo $_SESSION['returnToProfile'];
+        echo "<div class=\"info-p-div\">
+        <p class=\"info-p\"> Gracias " . $_SESSION['name'] . ", 
+        hemos guardado tus datos. <br><p>";
+        echo $_SESSION['returnToProfile'] . "</div>";
     }
 
     public function saveUserData( ){
