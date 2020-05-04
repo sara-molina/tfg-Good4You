@@ -18,7 +18,7 @@
                 
                 <ul class = "main-nav js--main-nav">
                     <li><a href="index.html" class = 'js--scroll-inicio'>Inicio</a></li>
-                    <li><a href="showMeals.html">Nuestros platos</a>
+                    <li><a href="showMeals.php">Nuestros platos</a>
                     <li><a href="contact.html" class = 'js--scroll-form'>Contacto</a>
                     <li><a href="login.html">Accede</a>
                     <li><a href="order.html">Haz tu pedido</a>

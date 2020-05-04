@@ -17,6 +17,7 @@
     <link rel="stylesheet" type="text/css" href="vendors/css/iconmonstr-iconic-font.min.css">
     <link href="https://fonts.googleapis.com/css?family=Lato:100,300,300i,400&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Old+Standard+TT&display=swap" rel="stylesheet">
+    <script src="../controller/validate.js"></script>
 </head>
 <body>
     <div class ="contact-div-nav">
@@ -38,7 +39,7 @@
             <h2>Déjanos un mensaje</h2>
         </div>
         <div class ="row">
-            <form method="post" action ="#" class="contact-form">
+            <form method="post" action ="#" class="contact-form" onsubmit="return validateContactData()">
                 <div class ="row">
                     <div class="col span-1-of-3">
                         <label for="name">Nombre</label>
@@ -62,7 +63,7 @@
                         <label for = "telefono">Teléfono</label>
                     </div>
                     <div class="col span-2-of-3">
-                        <input type="tel" name="telefono" id="telefono" placeholder="Escribe tu teléfono" required></textarea>
+                        <input type="tel" name="phone" id="phone" placeholder="Escribe tu teléfono" required></textarea>
                     </div>
                 </div>
                
@@ -71,7 +72,7 @@
                         <label>¿Qué quieres decirnos?</label>
                     </div>
                     <div class="col span-2-of-3">
-                        <textarea name="message"  placeholder="Escribe tu mensaje"></textarea>
+                        <textarea name="message" id="message" placeholder="Escribe tu mensaje"></textarea>
                     </div>
                 </div>
            
@@ -80,7 +81,7 @@
                         <label>Sí, acepto </label>
                     </div>
                     <div class="col span-2-of-3">
-                        <input type="checkbox" name="news" id="news"> ¿Aceptas nuestra política de protección de datos?
+                        <input type="checkbox" name="checkbox" id="checkbox"> ¿Aceptas nuestra política de protección de datos?
                     </div>
                 </div>
                 <div class ="row">
