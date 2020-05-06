@@ -1,6 +1,6 @@
 <?php
 
-require ("conexion.php");
+require ("conection.php");
 session_start();
 
 $_SESSION['user']= $_POST['user'];
@@ -264,7 +264,7 @@ if($GLOBALS['conn']){
                             <th>Productos</th>
                         </tr>';
                         while($row=mysqli_fetch_array($peticion)){
-                            echo '<tr>' . '<td>'.$row['order_id'].'</td>';
+                            echo '<tr>' . '<td>'.$row['order_id'].'</td>'
                             echo '<td>'.$row['name'].'</td></tr>'; 
                         };
                 echo '
