@@ -28,12 +28,12 @@ class Send {
         //con Gmail o en caso de GoogleApps utilizar con @tudominio.com
         $nombre_emisor= $name;               //Nombre de quien envía el correo
         $contrasena="good4you90.";          //contraseña de tu cuenta en Gmail
-        $correo_destino="good4youcorreo@gmail.com";      //Correo de quien recibe
+        $correo_destino="good4yougestordecorreo@gmail.com";      //Correo de quien recibe
         $nombre_destino="Good4You";                //Nombre de quien recibe
         $send ="De: $name \n";
-        $send .="Con e-mail: $email \n";
-        $send .="$phone \n";
-        $send .="Mensaje: $message";
+        $send .="con e-mail: $email \n";
+        $send .="teléfono $phone \n";
+        $send .="y mensaje: $message";
             
         //--------------------------------------------------------                   // Habilita información SMTP (opcional para pruebas)
                                                     // 1 = errores y mensajes
@@ -51,7 +51,7 @@ class Send {
         //De parte de quien es el correo
         $mail->SetFrom($correo_emisor, $nombre_emisor);
         //Asunto del correo
-        $mail->Subject = 'Probando';
+        $mail->Subject = 'El usuario  '. $email . ' contacta con nosotros';
         //Mensaje alternativo en caso que el destinatario no pueda abrir correos HTML
         $mail->AltBody = 'para ver el mensaje necesita un cliente de correo compatible con HTML.';
         //El cuerpo del mensaje, puede ser con etiquetas HTML
