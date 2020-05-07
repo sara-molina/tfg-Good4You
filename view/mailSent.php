@@ -17,7 +17,6 @@
     <link rel="stylesheet" type="text/css" href="vendors/css/iconmonstr-iconic-font.min.css">
     <link href="https://fonts.googleapis.com/css?family=Lato:100,300,300i,400&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Old+Standard+TT&display=swap" rel="stylesheet">
-    <script src="../controller/validate.js"></script>
 </head>
 <body>
     <div class ="contact-div-nav">
@@ -34,67 +33,12 @@
         </div>
     </nav> 
     </div>
-    <section class = "section-form" id = "contacto">
-        <div class="row">
-            <h2>Déjanos un mensaje</h2>
-        </div>
-        <div class ="row">
-            <form method="post" action ="mailSent.php" class="contact-form" onsubmit="return validateContactData()">
-                <div class ="row">
-                    <div class="col span-1-of-3">
-                        <label for="name">Nombre</label>
-                    </div>
-                    <div class="col span-2-of-3">
-                        <input type="text" name="name" id="name" placeholder="Tu nombre" required>
-                        
-                    </div>
-                </div>
-                <div class ="row">
-                    <div class="col span-1-of-3">
-                        <label for="email">E-mail</label>
-                    </div>
-                    <div class="col span-2-of-3">
-                        <input type="email" name="email" id="email" placeholder="Tu email" required>
-                        
-                    </div>
-                </div>
-                <div class ="row">
-                    <div class="col span-1-of-3">
-                        <label for = "telefono">Teléfono</label>
-                    </div>
-                    <div class="col span-2-of-3">
-                        <input type="tel" name="phone" id="phone" placeholder="Escribe tu teléfono" required></textarea>
-                    </div>
-                </div>
-               
-                <div class ="row">
-                    <div class="col span-1-of-3">
-                        <label>¿Qué quieres decirnos?</label>
-                    </div>
-                    <div class="col span-2-of-3">
-                        <textarea name="message" id="message" placeholder="Escribe tu mensaje"></textarea>
-                    </div>
-                </div>
-           
-                <div class ="row">
-                    <div class="col span-1-of-3">
-                        <label>Sí, acepto </label>
-                    </div>
-                    <div class="col span-2-of-3">
-                        <input type="checkbox" name="checkbox" id="checkbox"> ¿Aceptas nuestra política de protección de datos?
-                    </div>
-                </div>
-                <div class ="row">
-                    <div class="col span-1-of-3">
-                        <label>&nbsp;</label>
-                    </div>
-                    <div class="col span-2-of-3">
-                        <input type="submit" value="Enviar">
-                    </div>
-                </div>
-            </form>
-        </div>
-    </section>
+    <?php 
+            require ('../model/send.php');
+            $send = new Send();
+            $send->sendMail();
+
+        ?>
     <footer>
         <div class="row">
             <div class="col span-2-of-3">
