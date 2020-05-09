@@ -5,13 +5,11 @@
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-require ("PHPMailer.php"); 
-require ("SMTP.php");      
-require ("Exception.php");
+require ("PHPMailer/PHPMailer.php"); 
+require ("PHPMailer/SMTP.php");      
+require ("PHPMailer/Exception.php");
 
 class Send {
-
-
  
     public function sendMail() {
         $mail = new PHPMailer(); 
