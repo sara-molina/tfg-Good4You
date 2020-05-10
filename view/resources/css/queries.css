@@ -34,6 +34,9 @@
     nav{
         font-size: 60%;
     }
+    .form-container{
+        height: 47vh;
+    }
 }
 
 
@@ -86,6 +89,7 @@
 
     .long-copy{
         width: 100%;
+    
         margin-left: 0%;
     }
     h1{font-size: 180%;}
@@ -103,12 +107,16 @@
     .meal-photo{
         margin:auto;
     }
-
-
+    .form-container{
+        height: 60vh;
+    }
+}
     
 /*small phones 0 to 480px*/
 @media only screen and (max-width:480px){
 .contact-form{width:100% ;}
+.form-container{
+    height: 60vh;
+}
 
-
-}}
+}
