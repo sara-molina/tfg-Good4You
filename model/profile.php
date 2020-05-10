@@ -169,8 +169,10 @@ if($GLOBALS['conn']){
                 echo $_SESSION['modifyData'];
             }
             if ($array['contar'] == 0 ) {
-                echo '<p>No estás registrado o tus datos son incorrectos</p>';
+                echo "<div class=\"info-p-div\">
+                <p class =\"info-p\">No estás registrado o tus datos son incorrectos</p>";
                 echo $_SESSION['returnToProfile'];
+                echo "</div>";
             }
     }  
     public function register(){
@@ -180,7 +182,7 @@ if($GLOBALS['conn']){
 
         if($array['count']>0){
             echo "<div class=\"info-p-div\">
-            <p class =\"info-p\"> <span> Usuario ya registrado </span></p>
+            <p class =\"info-p\"> Usuario ya registrado</p>
             </div>";
         }else{
             $q="INSERT INTO users (user_id,pass) VALUES ('".$_SESSION['user']."','".$_SESSION['pass']."')";
