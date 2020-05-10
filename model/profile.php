@@ -171,7 +171,7 @@ if($GLOBALS['conn']){
             if ($array['contar'] == 0 ) {
                 echo "<div class=\"info-p-div\">
                 <p class =\"info-p\">No estás registrado o tus datos son incorrectos</p>";
-                echo "<a class=\"btn btn-full\" href=\"login.html\">Volver</a>";
+                echo "<a class=\"btn btn-full\" href=\"login.html\">Volver a iniciar sersión</a>";
                 echo "</div>";
             }
     }  

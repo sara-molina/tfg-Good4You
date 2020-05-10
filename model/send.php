@@ -51,7 +51,13 @@ class Send {
         $mail->MsgHTML($send);
  
         $mail->Send();
-        echo "El mensaje se ha enviado correctamente";
+        echo "
+        <section>
+        <div class=\"mail-send-div\">
+        <div class=\"info-p-div\">
+        <p class =\"info-p\">Mensaje enviado</p>";
+        echo "<a class=\"btn btn-full\" href=\"index.html\">Ir al inicio</a>";
+        echo "</div></div></section>";
         } catch (phpmailerException $e) {
         echo $e->errorMessage(); 
         } catch (Exception $e) {
