@@ -15,17 +15,15 @@
     <link rel="stylesheet" type="text/css" href="resources/css/queries.css"> 
     <link rel="stylesheet" type="text/css" href="vendors/css/animate.css">
     <link rel="stylesheet" type="text/css" href="vendors/css/iconmonstr-iconic-font.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Lato:100,300,300i,400&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Old+Standard+TT&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
         <nav>
             <div class = "row">
-                
                 <ul class = "main-nav js--main-nav">
                     <li><a href="index.html" class = 'js--scroll-inicio'>Inicio</a></li>
-                    <li><a href="meals.html">Nuestros platos</a>
+                    <li><a href="showMeals.php">Nuestros platos</a>
                     <li><a href="contact.html" class = 'js--scroll-form'>Contacto</a>
                     <li><a href="login.html">Accede</a>
                     <li><a href="order.html">Haz tu pedido</a>
@@ -36,15 +34,12 @@
         <div id="inicio" class ="hero-text-box js--inicio">
             <h1>Comida sana y orgánica a domicilio</h1>
             <h2>De nuestras cocinas a tu mesa en 30 min</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic tempore maiores architecto et aliquid,
-                 accusamus ex, quaerat, fuga nulla at qui rem commodi ea provident minus ut earum debitis cum.
-                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic tempore maiores architecto et aliquid,
-                 accusamus ex, quaerat, fuga nulla at qui rem commodi ea provident minus ut earum debitis cum.
-                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic tempore maiores architecto et aliquid,
-                 accusamus ex, quaerat, fuga nulla at qui rem commodi ea provident minus ut earum debitis cum.
-                </p>
-            <a class="btn btn-full" href="#">Nuestros platos </a>
-            <a class="btn btn-ghost js--scroll" href="#">Contáctanos</a>
+            <p>Con el trabajo, los hijos, el perro, la casa... La mayor parte de nuestro día se acaba y ¿quién tiene tiempo de cocinar un menú sano? Para algunos, es imposible.
+                Nosotros te traemos la solución para quitarte una de las preocupaciones que tienes en la cabeza: una dieta equilibrada. Nuestra cocina utiliza productos ecológicos,
+                elaboramos platos bajos en calorías y con ingredientes sencillos que te encatarán además de cuidarte. 
+            </p>
+            <a class="btn btn-full" href="showMeals.php">Nuestros platos </a>
+            <a class="btn btn-ghost" href="contact.html">Contáctanos</a>
         </div>
 
     </header>
@@ -57,7 +52,6 @@
         </div>
 
         <div class ="row">
-              
             <div class="col span-1-of-4 box ">
                 <ion-icon class = "big-icons" name="body-outline"></ion-icon>
                 <h3>100% orgánica</h3>
@@ -97,7 +91,7 @@
             </div>
             <div class="col span-1-of-3">
                 <h3  class="meals-tittles">Deliciosos guisos sanos</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio tempore dignissimos sequi velit est deserunt quibusdam pariatur? Consectetur, rem. Dicta consequatur neque sed dolore, earum voluptatem consectetur nobis reiciendis rem!</p>
+                <p>Un buen puchero no tiene por qué tener un exceso de calorías. Nuestros cocineros te preparán los mejores platos de cuchara y bajos en calorías. ¡Te chuparás los dedos!</p>
             </div>
 
             <div class="col span-1-of-3 clearfix">
@@ -110,7 +104,7 @@
             <div class="row">
                 <div class="col span-1-of-3">
                     <h3 id="salads-tittle" class="meals-tittles">Prueba nuestras ensaladas</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio tempore dignissimos sequi velit est deserunt quibusdam pariatur? Consectetur, rem. Dicta consequatur neque sed dolore, earum voluptatem consectetur nobis reiciendis rem!</p>
+                    <p>¿Estás cansado de las aburridas ensaladas de tomate, lechuga y cebolla? En Good4You tenemos una gran variedad de ellas con ingredientes que te sorprenderán. </p>
                 </div>
                 <div class="col span-1-of-3 clearfix">
                     <figure class ="meal-photo">
@@ -120,7 +114,7 @@
        
             <div class="col span-1-of-3">
                 <h3  class="meals-tittles">¡Déjate un buen sabor de boca!</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio tempore dignissimos sequi velit est deserunt quibusdam pariatur? Consectetur, rem. Dicta consequatur neque sed dolore, earum voluptatem consectetur nobis reiciendis rem!</p>
+                <p>Una buena comida no es lo mismo sin un dulce para terminarla. Todos nuestros postres también son bajos en calorías y utilizamos azúcares sin refinar y edulcorantes naturales. </p>
             </div>
           
            
@@ -223,27 +217,20 @@
     <footer>
         <div class="row">
             <div class="col span-2-of-3">
-                <ul class="footer-nav">
-                    <li><a href="#">About us</a></li>
-                    <li> <a href="#">Blog</a> </li>  
-                    <li><a href="#">Press</a></li>
-                    <li><a href="#">iOS App</a></li>  
-                    <li><a href="#">Android App</a> </li>   
-                </ul>
+                <p>Un proyecto de Juan Antonio Durán, Anthony González y Sara Molina</p>
             </div>
             <div class="col span-1-of-3">
                 <ul class="footer-nav rss-div">
-                    <li><a class = "rss-a"><i class="rss-icons im im-twitter"></i></a></li>
-                    <li><a class = "rss-a"><i class="rss-icons im im-facebook"></i></a></li>
-                    <li><a class = "rss-a"><i class="rss-icons im im-instagram"></i></a></li>
-                    <li><a ><i class="rss-icons im im-google-plus"></i></a></li>
+                    <li><a href="#"><i class="rss-icons im im-twitter"></i></a></li>
+                    <li><a href="#"><i class="rss-icons im im-facebook"></i></a></li>
+                    <li><a href="#"><i class="rss-icons im im-instagram"></i></a></li>
+                    <li><a href="#"><i class="rss-icons im im-google-plus"></i></a></li>
                 </ul>
             </div>
         </div>
-
     </footer>
 
-    <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.esm.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> 
     <script src="resources/js/script.js"></script>
     <script src="vendors/js/jquery.waypoints.min.js"></script>

@@ -153,6 +153,8 @@ input[type=submit]
 }
 
 
+
+
 /*------------------------------------------------*/
 /* HEADER */
 /*------------------------------------------------*/
@@ -286,6 +288,12 @@ header{
 /* MEALS */
 /*------------------------------------------------*/
 
+.meal-price{
+    margin: 20px 0;
+    text-align: center;
+    background-color: #efefef;
+}
+
 .meal-photo img{
     width:100%;
     height: auto;
@@ -319,6 +327,7 @@ header{
 /*------------------------------------------------*/
 /* FOOTER */
 /*------------------------------------------------*/
+
 
 footer{
     background-color: #333;
@@ -370,7 +379,7 @@ footer{
 
 footer p {
     color:#888;
-    text-align: center;
+    text-align: left;
     font-size: 90%;
 }
 .im-facebook,

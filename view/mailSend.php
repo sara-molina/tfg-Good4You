@@ -17,60 +17,33 @@
     <link rel="stylesheet" type="text/css" href="vendors/css/iconmonstr-iconic-font.min.css">
     <link href="https://fonts.googleapis.com/css?family=Lato:100,300,300i,400&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Old+Standard+TT&display=swap" rel="stylesheet">
-    <script src="../controller/validate.js"></script>
 </head>
 <body>
     <div class ="contact-div-nav">
-        <nav>
-            <div class = "row">
+    <nav>
+        <div class = "row" >
                 <ul class = "main-nav js--main-nav">
-                    <li><a href="index.html" class = 'js--scroll-inicio'>Inicio</a></li>
-                    <li><a href="showMeals.php">Nuestros platos</a>
-                    <li><a href="contact.html" class = 'js--scroll-form'>Contacto</a>
+                    <li><a href="index.html" class = "js--scroll-inicio">Inicio</a></li>
+                    <li><a href="showMeals.php"  >Nuestros platos</a>
+                    <li><a href="contact.html">Contacto</a>
                     <li><a href="login.html">Accede</a>
                     <li><a href="order.html">Haz tu pedido</a>
-                        
                 </ul>
-                <a class ="mobile-nav"><ion-icon class= "mobile-nav-icon js--nav-icon" name="menu-outline"></ion-icon></a> 
-                </div>
-        </nav>
+            <a class ="mobile-nav"><ion-icon class= "mobile-nav-icon js--nav-icon" name="menu-outline"></ion-icon></a> 
+        </div>
+    </nav> 
     </div>
-    
-    <section class = "section-login">
-        <div class="row">
-            <h2>Accede a tu cuenta</h2>
-        </div>
-        <div class ="row form-container">
-            <div class="profile-form">
-                <form  class="contact-form" action ="showProfile.php" onsubmit="return validateData()" method="POST">
-                    <div class ="row">
-                        <div class="col span-1-of-3">
-                            <label for="user">Usuario</label>
-                        </div>
-                        <div class="col span-2-of-3">
-                            <input class = "validate-text" type="email" name="user" id="user" placeholder="Inserta tu e-mail">
-                        </div>
-                    </div>
-                    <div class ="row">
-                        <div class="col span-1-of-3">
-                            <label for="pass">Contraseña</label>
-                        </div>
-                        <div class="col span-2-of-3">
-                            <input type="password" name="pass" id="pass" placeholder="Inserta tu contraseña">
-                            
-                        </div>
-                    </div>
-                    <input name = "registry" type="submit" class="btn " value="Registrarme"/>
-                    <input name = "login" type="submit" class="btn" value="Iniciar sesión"/>
-                </form>
-            </div>
-        </div>
-    </section>
+    <?php 
+            require ('../model/send.php');
+            $send = new Send();
+            $send->sendMail();
+            $send->saveMailData();
 
+        ?>
     <footer>
         <div class="row">
             <div class="col span-2-of-3">
-                <p>Un proyecto de Juan Antonio Durán, Anthony González y Sara Molina</p>
+                <p>Todos los derechos reservados</p>
             </div>
             <div class="col span-1-of-3">
                 <ul class="footer-nav rss-div">
@@ -87,7 +60,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> 
     <script src="resources/js/script.js"></script>
     <script src="vendors/js/jquery.waypoints.min.js"></script>
-
     
     
 </body>

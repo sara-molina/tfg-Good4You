@@ -17,6 +17,10 @@
     <link rel="stylesheet" type="text/css" href="vendors/css/iconmonstr-iconic-font.min.css">
     <link href="https://fonts.googleapis.com/css?family=Lato:100,300,300i,400&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Old+Standard+TT&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> 
+    <script src="resources/js/script.js"></script>
+    <script src="vendors/js/jquery.waypoints.min.js"></script>
     <script src="../controller/validate.js"></script>
 </head>
 <body>
@@ -28,49 +32,55 @@
                     <li><a href="showMeals.php">Nuestros platos</a>
                     <li><a href="contact.html" class = 'js--scroll-form'>Contacto</a>
                     <li><a href="login.html">Accede</a>
-                    <li><a href="order.html">Haz tu pedido</a>
-                        
+                    <li><a href="order.html">Haz tu pedido</a> 
                 </ul>
                 <a class ="mobile-nav"><ion-icon class= "mobile-nav-icon js--nav-icon" name="menu-outline"></ion-icon></a> 
                 </div>
         </nav>
     </div>
-    
-    <section class = "section-login">
-        <div class="row">
-            <h2>Accede a tu cuenta</h2>
-        </div>
-        <div class ="row form-container">
-            <div class="profile-form">
-                <form  class="contact-form" action ="showProfile.php" onsubmit="return validateData()" method="POST">
-                    <div class ="row">
-                        <div class="col span-1-of-3">
-                            <label for="user">Usuario</label>
-                        </div>
-                        <div class="col span-2-of-3">
-                            <input class = "validate-text" type="email" name="user" id="user" placeholder="Inserta tu e-mail">
-                        </div>
-                    </div>
-                    <div class ="row">
-                        <div class="col span-1-of-3">
-                            <label for="pass">Contraseña</label>
-                        </div>
-                        <div class="col span-2-of-3">
-                            <input type="password" name="pass" id="pass" placeholder="Inserta tu contraseña">
-                            
-                        </div>
-                    </div>
-                    <input name = "registry" type="submit" class="btn " value="Registrarme"/>
-                    <input name = "login" type="submit" class="btn" value="Iniciar sesión"/>
-                </form>
-            </div>
-        </div>
-    </section>
+   
+    <section>
 
+    <?php 
+    require ('../model/profile.php');
+    $registry = new Registry();
+
+    if(isset($_POST['registry'])){
+        echo "<div class=\"profile-div\">" ;
+        $registry->register();
+        echo "</div>";
+    }
+
+    if(isset($_POST['login'])) {
+        echo "<div class=\"profile-div\">" ;
+        $registry->login();
+        echo "</div>";
+    }
+
+    if(isset($_POST['guarda'])) {
+        echo "<div id= \"div-saved-data\" class=\"profile-div\">" ;
+        $registry->saveOrUpdateUserData();
+        echo "</div>";
+    }
+    if(isset($_POST['profile'])) {
+        echo "<div class=\"profile-div\">" ;
+        $registry->showData();
+        echo $_SESSION['modifyData'];
+        echo "</div>";
+    }
+    
+    if(isset($_POST['orders'])){
+        echo "<div class=\"orders-div\">" ;
+        $registry->showOrders();
+        echo "</div>";
+    } 
+
+    ?>
+</section>
     <footer>
         <div class="row">
             <div class="col span-2-of-3">
-                <p>Un proyecto de Juan Antonio Durán, Anthony González y Sara Molina</p>
+            <p>Un proyecto de Juan Antonio Durán, Anthony González y Sara Molina</p>
             </div>
             <div class="col span-1-of-3">
                 <ul class="footer-nav rss-div">
@@ -83,10 +93,6 @@
         </div>
     </footer>
 
-    <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> 
-    <script src="resources/js/script.js"></script>
-    <script src="vendors/js/jquery.waypoints.min.js"></script>
 
     
     

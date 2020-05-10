@@ -34,6 +34,12 @@
     nav{
         font-size: 60%;
     }
+    .form-container{
+        height: 47vh;
+    }
+    .mail-send-div{
+        margin: auto 30%;
+    }
 }
 
 
@@ -86,6 +92,7 @@
 
     .long-copy{
         width: 100%;
+    
         margin-left: 0%;
     }
     h1{font-size: 180%;}
@@ -103,12 +110,29 @@
     .meal-photo{
         margin:auto;
     }
-
-
+    .form-container{
+        height: 60vh;
+    }
+    iframe{
+        width:400px;
+        height:250px;
+        border:0;
+    }
+    .mail-send-div{
+        margin: auto 30%;
+    }
+}
     
 /*small phones 0 to 480px*/
 @media only screen and (max-width:480px){
 .contact-form{width:100% ;}
+.form-container{
+    height: 60vh;
+}
+iframe{
+    width:400px;
+    height:250px;
+    border:0;
+}
 
-
-}}
+}
