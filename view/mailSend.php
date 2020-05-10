@@ -46,14 +46,13 @@
             </div>
             <div class="col span-1-of-3">
                 <ul class="footer-nav rss-div">
-                    <li><a class = "rss-a"><i class="rss-icons im im-twitter"></i></a></li>
-                    <li><a class = "rss-a"><i class="rss-icons im im-facebook"></i></a></li>
-                    <li><a class = "rss-a"><i class="rss-icons im im-instagram"></i></a></li>
-                    <li><a ><i class="rss-icons im im-google-plus"></i></a></li>
+                    <li><a href="#"><i class="rss-icons im im-twitter"></i></a></li>
+                    <li><a href="#"><i class="rss-icons im im-facebook"></i></a></li>
+                    <li><a href="#"><i class="rss-icons im im-instagram"></i></a></li>
+                    <li><a href="#"><i class="rss-icons im im-google-plus"></i></a></li>
                 </ul>
             </div>
         </div>
-
     </footer>
 
     <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
