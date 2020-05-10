@@ -40,7 +40,7 @@
 
     <section class="section-meals js--section-dir-nav">
         <div class="row">
-            <h2 class = "section-meals-tittles">Nuestras ensaladas</h2>
+            <h2 class = "section-meals-tittles">Nuestros platos</h2>
         </div>
         
         <?php 
