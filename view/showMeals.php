@@ -9,6 +9,7 @@
     <link rel="stylesheet" type="text/css" href="vendors/css/iconmonstr-iconic-font.min.css">
     <link href="https://fonts.googleapis.com/css?family=Lato:100,300,300i,400&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Old+Standard+TT&display=swap" rel="stylesheet">
+    <script type="module" src="https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.esm.js"></script>
     <title>Good4You</title>
 </head>
 <body>
