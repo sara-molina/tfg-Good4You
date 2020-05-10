@@ -39,14 +39,7 @@ function validateContactData(){
         return false;
     }
     var mail = document.getElementById('email').value;
-    if(mail == null || mail.length == 0 ||!mail.includes("@") )
-        var mailLength= mail.length;
-        alert(typeof(mailLength));
-        var mailLengthTocheck = mailLength - 4;
-        alert(mailLengthTocheck);
-        var endOfMail= mail.substring(mailLengthTocheck,mailLength);
-        alert(endOfMail);
-    if(!endOfMail.includes(".es") && !endOfMail.includes(".com")){
+    if(mail == null || mail.length == 0 ||!mail.includes("@") ){
         alert('ERROR: Introduce un mail válido');
         return false;
     }

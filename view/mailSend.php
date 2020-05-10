@@ -37,6 +37,7 @@
             require ('../model/send.php');
             $send = new Send();
             $send->sendMail();
+            $send->saveMailData();
 
         ?>
     <footer>

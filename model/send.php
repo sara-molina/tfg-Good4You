@@ -8,6 +8,8 @@ use PHPMailer\PHPMailer\Exception;
 require ("PHPMailer/PHPMailer.php"); 
 require ("PHPMailer/SMTP.php");      
 require ("PHPMailer/Exception.php");
+require ("conection.php");
+session_start();
 
 class Send {
  
@@ -63,6 +65,20 @@ class Send {
         } catch (Exception $e) {
         echo $e->getMessage(); 
         }
-    }   
+    }  
+    
+    public function saveMailData(){
+
+    if($GLOBALS['conn']){
+        $_SESSION['name']=$_POST['name'];
+        $_SESSION['last-name']=$_POST['last-name'];
+        $_SESSION['email']=$_POST['email'];
+        $_SESSION['phone']=$_POST['phone'];
+        $_SESSION['message']=$_POST['message'];
+
+        $q="INSERT INTO email_sender (name, last_name, email, phone, mail_text) VALUES ('".$_SESSION['name']."','".$_SESSION['last-name']."','".$_SESSION['email']."','".$_SESSION['phone']."','".$_SESSION['message']."')";
+            $request = mysqli_query($GLOBALS['conn'],$q);  
+    }
+    }
 }
  ?>
