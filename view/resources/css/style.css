@@ -179,7 +179,12 @@ input[type=submit]
 /*------------------------------------------------*/
 /* NAVIGATION */
 /*------------------------------------------------*/
-
+.logo{
+    height: 70px;
+    width:auto;
+    float:left;
+    margin-top: 25px;
+}
 /* Main navy*/
 .main-nav{
     list-style: none;

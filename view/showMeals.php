@@ -47,7 +47,6 @@
             require ('../model/products.php');
             $products = new Products();
             $products->showProducts();
-
         ?>
                 
 
